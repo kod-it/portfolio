@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { RoughNotation } from 'react-rough-notation';
-
+import { TheoryPosts } from './components/theoryPosts';
+import { ProjectPosts } from './components/projectPosts';
 const aboutColor = "#FF5733"; // Example color
 
 export default function Page() {
   return (
     <section>
             <p className="italic text-2xl  mb-8 text-center">
-          <span className="font-semibold">Optimising reality,</span> one lazy solution at a time.
+          <span className="font-semibold">Optimising convenience,</span> one lazy solution at a time.
         </p>
       <h1 className="mb-2 text-4xl font-semibold tracking-tighter text-right">
         Hi, I am Akash
@@ -47,7 +48,19 @@ export default function Page() {
       </Link>
       
       </h1>
-      
+      <div className="flex flex-wrap lg:flex-nowrap gap-8 lg:divide-x divide-gray-200">
+        {/* Theories Section */}
+        {/* <div className="flex-1 w-full lg:w-1/2 pr-4">
+          <h1 className="font-semibold text-2xl mb-2 tracking-tighter">My Theories</h1>
+          <TheoryPosts />
+        </div> */}
+
+        {/* Projects Section */}
+        {/* <div className="flex-1 w-full lg:w-1/2 pl-4">
+          <h1 className="font-semibold text-2xl mb-2 tracking-tighter">My Projects</h1>
+          <ProjectPosts />
+        </div> */}
+      </div>
     </section>
   );
 }
