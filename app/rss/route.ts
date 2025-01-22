@@ -1,8 +1,8 @@
 import { baseUrl } from 'app/sitemap'
-import { getBlogPosts } from 'app/blog/utils'
+import { getTheoryPosts } from 'app/theories/utils'
 
 export async function GET() {
-  let allBlogs = await getBlogPosts()
+  let allBlogs = await getTheoryPosts()
 
   const itemsXml = allBlogs
     .sort((a, b) => {
@@ -15,7 +15,7 @@ export async function GET() {
       (post) =>
         `<item>
           <title>${post.metadata.title}</title>
-          <link>${baseUrl}/blog/${post.slug}</link>
+          <link>${baseUrl}/theories/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
           <pubDate>${new Date(
             post.metadata.publishedAt
