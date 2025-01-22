@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <section>
             <p className="italic text-2xl  mb-8 text-center">
-          <span className="font-semibold">Optimizing reality,</span> one lazy solution at a time.
+          <span className="font-semibold">Optimising reality,</span> one lazy solution at a time.
         </p>
       <h1 className="mb-2 text-4xl font-semibold tracking-tighter text-right">
         Hi, I am Akash
