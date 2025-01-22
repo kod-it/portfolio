@@ -172,3 +172,10 @@ html.dark {
 }
 
 
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('/century-gothic.woff2') format('woff2'),
+       url('/CenturyGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
