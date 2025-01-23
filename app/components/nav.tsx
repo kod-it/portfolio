@@ -7,9 +7,9 @@ const navItems = {
   '/': {
     name: 'home',
   },
-  // '/projects': {
-  //   name: 'projects',
-  // },
+  '/projects': {
+    name: 'projects',
+  },
   '/theories': {
     name: 'theories',
   },
@@ -29,14 +29,17 @@ export function Navbar() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(newTheme);
   };
+  
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
     document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(savedTheme);
-  }, [theme]);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

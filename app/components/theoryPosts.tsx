@@ -1,44 +1,7 @@
 // import Link from 'next/link'
 // import { formatDate, getTheoryPosts } from 'app/theories/utils'
 
-// export function TheoryPosts() {
-//   let allBlogs = getTheoryPosts()
 
-//   return (
-//     <div>
-//       {allBlogs
-//         .sort((a, b) => {
-//           if (
-//             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-//           ) {
-//             return -1
-//           }
-//           return 1
-//         })
-//         .map((post) => (
-//           <Link
-//             key={post.slug}
-//             className="flex flex-col space-y-1 mb-4"
-//             href={`/theories/${post.slug}`}
-//           >
-//             <div>
-//             <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-//               <p className="w-[100px] tabular-nums">
-//                 {formatDate(post.metadata.publishedAt, false)}
-//               </p>
-//               <p className="tracking-tight">
-//                 <strong>{post.metadata.title}</strong>
-//               </p>
-//               </div>
-//               <p className="tracking-tight">
-//                 {post.metadata.summary}
-//               </p>
-//             </div>
-//           </Link>
-//         ))}
-//     </div>
-//   )
-// }
 import Link from 'next/link'
 import { formatDate, getTheoryPosts } from 'app/theories/utils'
 
@@ -74,6 +37,42 @@ export function TheoryPosts() {
               <p className="tracking-tight text-gray-700 dark:text-gray-300">
                 {post.metadata.summary}
               </p>
+            </div>
+          </Link>
+        ))}
+    </div>
+  )
+}
+export function TheoryPostsHome() {
+  let allBlogs = getTheoryPosts()
+
+  return (
+    <div>
+      {allBlogs
+        .sort((a, b) => {
+          if (
+            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
+          ) {
+            return -1
+          }
+          return 1
+        })
+        .map((post) => (
+          <Link
+            key={post.slug}
+            className="flex flex-col space-y-1 mb-4"
+            href={`/theories/${post.slug}`}
+          >
+            <div>
+            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
+              <p className="w-[100px] tabular-nums">
+                {formatDate(post.metadata.publishedAt, false)}
+              </p>
+              <p className="tracking-tight">
+                <strong>{post.metadata.title}</strong>
+              </p>
+              </div>
+
             </div>
           </Link>
         ))}

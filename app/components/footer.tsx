@@ -30,6 +30,38 @@ export default function Footer() {
             <p className="ml-2 h-7">linkedin</p>
           </a>
         </li>
+
+
+        <li>
+          <a
+            className="flex items-center transition-all"
+            rel="noopener noreferrer"
+            href="/projects"
+          >
+            <ArrowIcon />
+            <p className="ml-2 h-7">projects</p>
+          </a>
+        </li>
+        <li>
+          <a
+            className="flex items-center transition-all"
+            rel="noopener noreferrer"
+            href="/theories"
+          >
+            <ArrowIcon />
+            <p className="ml-2 h-7">theories</p>
+          </a>
+        </li>
+        <li>
+          <a
+            className="flex items-center transition-all"
+            rel="noopener noreferrer"
+            href="/about"
+          >
+            <ArrowIcon />
+            <p className="ml-2 h-7">about</p>
+          </a>
+        </li>
       </ul>
       <p className="mt-5 text-center opacity-50">
         © {new Date().getFullYear()} Thank you for being part of the journey! — Akash Dip
