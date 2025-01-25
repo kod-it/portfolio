@@ -8,21 +8,48 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Portfolio',
-    template: '%s | Akash Dip',
+    default: 'Akash Dip – Software Engineer',
+    template: '%s | Akash Dip'
   },
-  description: 'This is my portfolio.',
+  description: 'Optimising convenience, one lazy solution at a time.',
+  
+  // Optionally include keywords for SEO
+  // (Keywords are less impactful than they used to be, but can still be included)
+  keywords: ['Akash Dip', 'MERN Stack', 'Software Engineer', 'Portfolio', 'Cloud Integrations'],
+  
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Akash Dip – Software Engineer & MERN Stack Developer',
+    description: 'Discover scalable web apps, cloud integrations, and automated workflows in Akash Dip’s portfolio.',
     url: baseUrl,
     siteName: "Akash's Folio",
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: `${baseUrl}/Ad.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Akash Dip Portfolio'
+      }
+    ]
   },
+
+  // Optional: Add Twitter Card metadata for richer sharing on Twitter
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Akash Dip – Software Engineer & MERN Stack Developer',
+    description: 'Optimising convenience, one lazy solution at a time.',
+    // If you have a Twitter username, you can include it here
+    // site: '@yourTwitterHandle',
+    // creator: '@yourTwitterHandle',
+    images: [`${baseUrl}/Ad.png`]
+  },
+
+  // Robots settings to allow indexing and following
   robots: {
     index: true,
     follow: true,
@@ -31,10 +58,14 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+      'max-snippet': -1
+    }
   },
-}
+
+  // Optionally specify a canonical URL
+  // (In Next.js 13, you can also use `alternates: { canonical: baseUrl }` instead)
+};
+
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
 
