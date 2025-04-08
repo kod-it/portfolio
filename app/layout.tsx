@@ -11,6 +11,9 @@ import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+  icons: {
+    icon: [{url:`${baseUrl}/favicon.ico`}]
+  },
   title: {
     default: 'Akash Dip – Software Engineer',
     template: '%s | Akash Dip'

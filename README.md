@@ -1,2 +1,3 @@
 # TBD
 
+npm run dev
